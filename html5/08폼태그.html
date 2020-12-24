@@ -33,9 +33,78 @@
 </form>
 
 <h2>다양한 입력요소 알아보기</h2>
-<form name="frm2">
-    <div><input type="text" placeholder="아이디"> </div>
-    <div><input type="password" placeholder="비밀번호"> </div>
+<form name="frm2" method="get">
+    <div><input type="text" name="userid" placeholder="아이디"> </div>
+    <div><input type="password" name="passwd" placeholder="비밀번호"> </div>
+    <div><label for="gender">성별</label>
+     남 <input type="radio" id="gender" name="gender" value="m" checked="checked">
+     여 <input type="radio" name="gender" value="f">
+    </div>
+    <div><label for="hobby">취미</label>
+        독서<input type="checkbox" id="hobby" name="hobby" value="book">
+        여행<input type="checkbox" name="hobby" value="trip">
+        운동<input type="checkbox" name="hobby" value="sports" checked="checked">
+        민트초코<input type="checkbox" name="hobby" value="min">
+    </div>
+    <div>
+        생년<select name="byear">
+        <option>1999</option>
+        <option>2001</option>
+        <option>2002</option>
+        <option>2003</option>
+        <option>2004</option>
+        <option>2005</option>
+        <option>2006</option>
+        <option>2007</option>
+        <option>2008</option>
+        <option>2009</option>
+        <option selected="selected">2010</option>
+    </select>
+        월<select name="bmonth">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option selected="selected">10</option>
+        <option>11</option>
+        <option>12</option>
+    </select>
+        일<select name="bday">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+        <option>13</option>
+        <option>14</option>
+        <option selected="selected">15</option>
+    </select>
+    </div>
+    <div><label for="intro">자기소개</label>
+    <textarea id="intro" name="intro" rows="10" cols="50"></textarea></div>
+
+    <div><label for="attach">파일첨부</label>
+    <input type="file" id="attach" name="attach" > </div>
+
+    <div><input type="hidden" name="today" value="2020-12-24 12:25:00"></div>
+
+    <div><input type="text" name="date" value="2020-12-24" readonly="readonly"></div>
+
+    <div><input type="text" name="time" value="12:25:00" disabled="disabled"></div>
+
+    <div><button type="submit">입력완료</button> </div>
 </form>
 
 </body>
@@ -44,6 +113,7 @@
 폼 form
 웹페이지에서 사용자로부터 어떤 정보를 입력받아 클라이언트에서 처리하거나 서버로 전송하려면
 form태그와 다양한 입력요소를 사용하면 됨
+
 action : 클라이언트가 전송한 데이터를 처리할 대상 지정 (웹 어플리케이션 서버 필요)
 enctype : 클라이언트가 전송한 데이터의 유형(텍스트 전용, 혼합(다중:텍스트+a))
 
@@ -53,7 +123,7 @@ form 태그에 method라는 속성을 이용해서 클라이언트의 데이터�
 
 get방식 : url 뒤에 질의문자열 형태를 추가해서 전달함
         단점. 데이터가 그대로 외부에 노출, 전송할 수 있는 데이터의 크기도 제한적
-        데이터의 중요도가 낮고 크기가 자그며 공개되어도 상관없는 경우
+        데이터의 중요도가 낮고 크기가 작으며 공개되어도 상관없는 경우
 
 post방식: http 요청헤더에 담아서 전달함
          데이터가 외부에 노출되지 않음, 전송 할 수 있는 데이터 크기가 무제한
@@ -62,6 +132,7 @@ post방식: http 요청헤더에 담아서 전달함
 폼 관련 요소
 label : 폼의 이름을 붙일 때 사용하는 태그
         for 라는 속성을 이용해서 관련있는 입력요소의 id값을 지정해줘야 함
+
 input : 사용자로부터 데이터를 입력받을 때 사용하는 태그
         placeholder - 입력요소의 간단한 안내문구 출력
         type - 입력받을 데이터의 유형 정의
@@ -69,5 +140,13 @@ input : 사용자로부터 데이터를 입력받을 때 사용하는 태그
                 textarea - 대량 문자 데이터 입력
                 radio, checkbox, select - 다중 선택 데이터
                 file - 파일데이터
-                date, time - 날짜 , 시간 데이터
+                hidden - 데이터 입력없이 전송함 (화면성에서는 보이지 않음)
+        value - 폼에 초기값 지정
+        readonly - 폼의 입력을 일시적으로 막음
+        disavled - 폼의 입력을 일시적으로 막고 서버전송도 막음
+        checked - radio, checkbox에 초기선택 설정
+        selected - select에 초기선택 설정
+
+html5에서 추가된 요소
+    date, time - 날짜 , 시간 데이터
 -->
