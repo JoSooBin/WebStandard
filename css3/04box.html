@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>박스속성</title>
+    <style>
+        #box1 {width: 300px; background: yellow;
+            padding: 25px; border: 5px solid navy;
+            margin: 25px;}
+
+        #box2 {width: 300px; background: yellow;
+            padding: 25px; border: 5px solid navy;
+            margin: 25px; height: 100px;
+            overflow: hidden;}
+
+        #box3{width: 300px; border: 5px solid navy;
+            padding: 25px;/* 4개의 방향을 단일값으로 선언*/
+            padding: 25px 25px;/*2개의 방향(상하/좌우)를 2개값으로 선언*/
+            padding: 25px 25px 25px;/*3개의 방향(상/좌우/하)를 3개값으로 선언*/
+            padding: 25px 20px 45px 65px;/*4개의 방향(상/우/하/좌)를 4개값으로 선언*/
+
+            padding-top: 5px;
+            padding-right: 20px;
+            padding-bottom: 45px;
+            padding-left: 65px;
+        }
+
+        #box4 {width: 300px; margin: 10px auto;}
+        #box5 {width: 300px;
+                border: 5px outset gray;/*단축식*/
+                border-top-style: dotted;
+                border-right-style: dashed;
+                border-bottom-style: double;
+                border-left-style: solid;
+                border-style: dotted dashed double solid;/*단축식*/
+
+                border-top-color: yellow;
+                border-right-color: green;
+                border-bottom-color: navy;
+                border-left-color: lime;
+                border-color: yellow green navy lime;/*단축식*/
+
+                border-width: thin thin thick thick;}
+   </style>
+</head>
+<body>
+<h1>박스모델</h1>
+<div id="box1">
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+</div>
+<div id="box2">
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+</div>
+<div id="box3">
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+</div>
+<div id="box4">
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+</div>
+<div id="box5">
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+</div>
+</body>
+</html>
+<!--
+CSS 박스모델
+모든 HTML 요소는 박스 형태의 영역을 지니고 있음
+이러한 박스는 기본적으로 내용content, 안쪽여백padding, 바깥여백margin, 테두리border등으로 구성
+
+브라우저는 박스의 기본크기와 속성, 위치를 기반으로 화면에 자리잡음
+
+width/height 속성
+요소의 너비와 높이를 지정할때 사용
+단, 컨텐츠 영역보다 컨텐츠가 크면
+
+margin/padding 속성
+컨텐츠를 둘러싸고 있는 4개 방향(top/right/bottom/left)에 대해 지정 가능
+margin, padding은 1개 값, 2개 값, 3개 값, 4개 값을 이용해서 지정할 수 있음
+한편, -top, -rigth, -bottom, -left 속성을 이용해서
+세부적으로 margin이나 padding 조절 가능
+
+자동정렬
+margin의 left/right 속성을 auto라고 선언하면
+해당요소를 브라우져 중앙에 배치할 수 있음
+
+테두리
+border-style, border-color, border-width 등의 속성을 가짐
+padding/margin과 마찬가지로 단축 표기식으로 선언 할 수 있음
+'border: 선두께 선종류 선색깔' 순으로 정의해야 함
+
+border-style : dotted, dashed, solid, double, ...
+border-width : thin, thick, medium, 수치값, ...
+-->
