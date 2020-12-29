@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트속성</title>
+    <style>
+        .fontsize1 {font-size: 20px}
+        .fontsize1 {font-size: 125%}
+        .fontsize1 {font-size: 1.3em}
+
+        .fontfamily1 {font-family: 궁서체, "맑은 고딕"}
+
+        .fontstyle {font-style: italic}
+        .fontweight {font-weight: bold}
+
+        .lineheight1 {line-height: 70%}
+        .lineheight2 {line-height: 1.2}/*16px * 1.2*/
+        .lineheight3 {line-height: 3.0}
+
+        .letterspacing1 {letter-spacing: 25px}
+        .letterspacing2 {letter-spacing: 30px}
+
+        .center{text-align: center}
+        .right{text-align: right}
+
+        .overline{text-decoration: overline}
+        .underline{text-decoration: underline}
+        .linthrough{text-decoration: line-through}
+
+        .box{width: 150px; height: 150px; border:2px solid purple}
+        /*.textoverflow{overflow: hidden; text-overflow: clip;} /*박스에 알맞게 글자 잘라버림*/
+        .textoverflow{display: -webkit-box;
+                        -webkit-line-clamp: 7;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;}
+
+        .textoverflow2{margin-top: 100px; border:1px solid blue; height: 25px; width: 300px; white-space: nowrap;
+                        overflow: hidden;  text-overflow: ellipsis}
+        .wordwrap {word-wrap: break-word; margin-top: 100px; border: 1px solid orangered}
+        .wordbreak {word-break: break-all; margin-top: 100px; border: 1px solid orangered}
+        .whitespace{white-space: pre}
+
+    </style>
+</head>
+<body>
+<h1>텍스트속성</h1>
+<p class="fontsize1">시간은 금이라구, 친구!!</p>
+<p class="fontsize2">시간은 금이라구, 친구!!</p>
+<p class="fontsize3">시간은 금이라구, 친구!!</p>
+<p class="fontfamily1">시간은 금이라구, 친구!!</p>
+<p class="fontstyle">시간은 금이라구, 친구!!</p>
+<p class="fontweight">시간은 금이라구, 친구!!</p>
+
+<p class="lineheight1">
+    시간은 금이라구, 친구!!<br>
+    시간은 금이라구, 친구!!<br>
+    시간은 금이라구, 친구!!</p>
+<p class="lineheight2">
+    시간은 금이라구, 친구!!<br>
+    시간은 금이라구, 친구!!<br>
+    시간은 금이라구, 친구!!</p>
+<p class="lineheight3">
+    시간은 금이라구, 친구!!<br>
+    시간은 금이라구, 친구!!<br>
+    시간은 금이라구, 친구!!</p>
+
+<p class="letterspacing1">시간은 금이라구, 친구!!</p>
+<p class="letterspacing2">World of Warcraft</p>
+
+<p class="center">World of Warcraft</p>
+<p class="right">World of Warcraft</p>
+
+<p class="overline">시간은 금이라구, 친구!!</p>
+<p class="underline">시간은 금이라구, 친구!!</p>
+<p class="linthrough">시간은 금이라구, 친구!!</p>
+
+<div class="box textoverflow">국가는 전통문화의 계승·발전과 민족문화의 창달에 노력하여야 한다. 모든 국민은 양심의 자유를 가진다. 국민의 자유와 권리는 헌법에 열거되지 아니한 이유로 경시되지 아니한다.
+    국무회의는 대통령·국무총리와 15인 이상 30인 이하의 국무위원으로 구성한다. 모든 국민은 법률이 정하는 바에 의하여 납세의 의무를 진다. 언론·출판은 타인의 명예나 권리 또는 공중도덕이나 사회윤리를 침해하여서는 아니된다. 언론·출판이 타인의 명예나 권리를 침해한 때에는 피해자는 이에 대한 피해의 배상을 청구할 수 있다.
+    </div>
+<hr>
+<div class="box textoverflow2">국가는 전통문화의 계승·발전과 민족문화의 창달에 노력하여야 한다. 모든 국민은 양심의 자유를 가진다. 국민의 자유와 권리는 헌법에 열거되지 아니한 이유로 경시되지 아니한다.
+    국무회의는 대통령·국무총리와 15인 이상 30인 이하의 국무위원으로 구성한다. 모든 국민은 법률이 정하는 바에 의하여 납세의 의무를 진다. 언론·출판은 타인의 명예나 권리 또는 공중도덕이나 사회윤리를 침해하여서는 아니된다. 언론·출판이 타인의 명예나 권리를 침해한 때에는 피해자는 이에 대한 피해의 배상을 청구할 수 있다.
+</div>
+<hr>
+<div class="box wordwrap">aaaaaaaaaaaaaaaa http://52.79.227.168:8080/rookie/07시멘틱태그.html</div>
+<hr>
+<div class="box wordbreak">aaaaaaaaaaaaaaaa http://52.79.227.168:8080/rookie/07시멘틱태그.html</div>
+<hr>
+<div class="whitespace">
+    public class Helloworld{
+        puvlic static void main(String[] args){
+        System.out.println("Hello, World!!");
+        }
+    }
+</div>
+</body>
+</html>
+<!--
+font/text 속성
+폰트 및 텍스트의 크기, 지정, 스타일, 정렬등을 설정할 수 있음
+
+font-size : 글자의 크기 설정
+font-family : 글자의 글꼴 설정
+               특정 글꼴이 미리 설치돼있어야 제대로 보이는 경우도 있음
+               단, 웹폰트를 사용하면 바로 보이기도 함
+font-style : 글자의 모양 설정
+font-weight : 글자의 굵기 설정
+font-variant: 글자의 대소문자 설정
+line-height : 텍스트의 줄간격 설정
+letter-spacing : 글자간의 간격 설정
+text-align : 텍스트의 수평정렬 설정
+text-decoration : 텍스트 꾸미기 설정
+text-overflow : 대상요소의 영역을 벗어나는 텍스트에 대한 처리
+word-wrap : 대상요소의 여역을 벗어나는 단어에 대한 처리
+word-break : 대상요소의 영역을 벗어나는 단어에 대한 강제적 처리
+white-space : 공백, 들여쓰기, 줄바꿈등을 의미하는 기호. html상에서는 이러한 기호들이 하나만 인식되거나 무시됨.
+                white-space 속성을 이용하면 이러한 기호를 제어 할 수 있음
+                nowrap : 모든 줄바꿈 무시
+                pre : 공백, 들여쓰기, 줄바꿈 모두 인식
+
+글자속성의 단축표기식
+font : 스타일 굵기 크기 줄간격 글꼴
+
+-->
