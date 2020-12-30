@@ -3,27 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>list</title>
+    <link rel="stylesheet" href="/css3/normalize.css">
+    <style>
+        body{margin: 0; padding: 0;}
+        .container{ width: 1150px; margin: 0 auto;}
+
+        nav ul {list-style: none; padding: 0 0 15px 0; }
+        nav ul li {float: left; padding-left: 150px;}
+        nav hr {clear: both; height: 1px; background: black;}
+
+        #main {min-height: 500px;}
+
+        footer hr {height: 1px; background: black;}
+        footer p {text-align: center;}
+
+        /*링크에 대한 스타일 정의*/
+        /*링크색: 검정, 밑줄 제거*/
+        /*링크색hover: 빨강, 밑줄 표시*/
+        a{font-weight: bold; }
+        a:link{color: black; text-decoration: none;}
+        a:visited{color: black; text-decoration: none;}
+        a:active{color: black; text-decoration: none;}
+        a:hover{color: red; text-decoration: underline;}
+
+    </style>
+    <style>
+        table{width: 75%; margin: 0 auto; border-collapse: collapse;table-layout: fixed; margin-bottom: 100px;}
+        th, td{border: 1px solid black; text-align: center; padding: 10px;}
+        td:nth-of-type(2){white-space: nowrap; overflow: hidden; text-overflow: ellipsis}
+        .newbtn{text-align: right; border: none;}
+        .bdgnb {border: none;}
+        .cpage {font-weight: bold; color: red; font-size: 30px;}
+    </style>
 </head>
 <body>
+<div class="container">
 <header>
     <h1>JSP프로젝트v1</h1>
 </header>
 <nav>
     <ul>
-        <li>Home</li>
-        <li>회원가입</li>
-        <li>로그인</li>
-        <li>게시판</li>
-        <li>회원정보</li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../join.html">회원가입</a></li>
+        <li><a href="../login.html">로그인</a></li>
+        <li><a href="list.html">게시판</a></li>
+        <li><a href="../myinfo.html">회원정보</a></li>
     </ul>
     <hr>
 </nav>
-<div id="container">
+<div id="main">
     <section>
-        <h2>회원정보</h2>
-        <br>
+        <h3>게시판</h3>
         <table>
+            <colgroup><!-- 테이블 컬럼너비 정의-->
+                <col style="width: 10%">
+                <col >
+                <col style="width: 15%">
+                <col style="width: 15%">
+                <col style="width: 10%">
+            </colgroup>
             <thead>
+            <tr><td colspan="5" class="newbtn"><button type="button">글쓰기</button></td></tr>
+
             <tr><td>번호</td><td>제목</td><td>작성자</td><td>작성일</td><td>조회</td></tr>
             </thead>
             <tbody>
@@ -38,6 +79,8 @@
             <tr><td>1</td><td width="250">"시간은 금이야, 친구!" 진짜라구, 친구! 정말이라구 친구! 사실이라구, 친구!</td><td>JSB</td><td>2020-12-23</td><td>777</td></tr>
             <tr><td>1</td><td width="250">"시간은 금이야, 친구!" 진짜라구, 친구! 정말이라구 친구! 사실이라구, 친구!</td><td>JSB</td><td>2020-12-23</td><td>777</td></tr>
             <tr><td>1</td><td width="250">"시간은 금이야, 친구!" 진짜라구, 친구! 정말이라구 친구! 사실이라구, 친구!</td><td>JSB</td><td>2020-12-23</td><td>777</td></tr>
+
+            <tr><td colspan="5" class="bdgnb"><span>◁ ◀◀ <span class="cpage">1</span>  2 3 4 5 6 7 8 9 10 ▶▶ ▷</span></td></tr>
             </tbody>
         </table>
     </section>
@@ -46,6 +89,6 @@
     <hr>
     <p>copyright &copy; 2021. JBS All rights reserved.</p>
 </footer>
-
+</div>
 </body>
 </html>
