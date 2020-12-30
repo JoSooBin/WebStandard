@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>테이블속성</title>
+    <style>
+        .table1{ border: 1px solid black;
+                border-collapse: collapse }
+        td, th{ border: 1px solid black;
+                padding: 10px;}
+        .table2{ border: 1px solid blue;
+                width: 300px;
+                table-layout: fixed;}
+        .table2 td {white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-align: center;}
+    </style>
+</head>
+<body>
+<h1>테이블속성</h1>
+<table class="table1">
+    <tr><th>이름</th><th>국어</th><th>영어</th><th>수학</th></tr>
+    <tr><td>혜교</td><td>99</td><td>77</td><td>53</td></tr>
+    <tr><td>지현</td><td>55</td><td>55</td><td>75</td></tr>
+    <tr><td>수지</td><td>45</td><td>86</td><td>89</td></tr>
+</table>
+
+<table class="table2">
+    <tr><td>내용</td><td>123465789012346578901234657890</td></tr>
+</table>
+
+<table class="table3">
+    <tr><td>1234657890</td><td>1234657890</td><td>1234657890</td></tr>
+    <tr><td>1234657890</td><td>1234657890</td><td>1234657890</td></tr>
+    <tr><td>1234657890</td><td>1234657890</td><td>1234657890</td></tr>
+</table>
+</body>
+</html>
+<!--
+테이블
+데이터를 2차원 표 형태로 나타내는데 사용하는 요소
+
+border-collapse
+테이블의 테두리를 어떻게 표현할 것인지 정의
+separate : 셀간 공백 유지
+collapse : 셀간 공백 제거
+border-spacing : border-collapse 속성이 separate일 때 셀간 공백 크기를 정의
+table-layout : 테이블의 내용에 따라 테이블의 크기를 어떻게 표현 할 것인지 정의
+fixed : 고정된 너비로 테이블의 크기를 고정 함
+auto : 내용에 따라 테이블이 자동으로 늘어남
+-->
