@@ -3,14 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>레이아웃1</title>
+    <style>
+        body{margin: 0; padding: 0}
+        .container {width: 1150px; margin: 0 auto;}
+        header {/*border: 1px solid red;*/ height: 100px;}
+        header h1 {float: left; background: #dcdcdc; padding:20px 50px; margin: 10px 10px 10px 25px; }
+        header p {float:left; margin-top: 65px; /*border: 1px solid blue*/}
+        header ul {list-style: none; padding: 0; float: right; margin-right: 30px}
+        header li {float: left; padding: 5px;}
+        nav{/*clear: both; border: 1px solid green;*/ height: 34px; padding-left: 20px;padding-top:5px; background: #dcdcdc}
+        nav input{border: 1px solid black; padding: 5px; width: 325px}
+        nav select {padding: 6px; width: 150px;}
+        nav button {padding: 5px; width: 150px; background: black; color:white; font-size: 15px; padding: 4px}
+
+        #main{/*border: 1px solid red;*/ min-height: 500px;}
+        #main aside {float: left;}
+
+        aside ul{list-style: none; padding: 0; margin: 10px 10px 20px 20px; border: 3px solid black; width: 225px;}
+        aside li {border-bottom: 1px solid silver; padding: 7px 14px; font-weight: bold; font-size: 18px;}
+        #banner {float: right; width: 840px; border: 2px solid black; margin: 10px 25px 20px 0px; height: 272px}
+        #banner h3 { margin-top: 110px; text-align: center}
+        #banner ul { list-style: none; padding: 0; margin-top: 75px; margin-left: 650px}
+        #banner li {float: left; padding: 8px 12px; background: #dcdcdc; margin-right: 10px;}
+
+        #prodlist {clear: both;}
+        #prodlist h3 {margin-left: 25px}
+        #prodlist ul{ list-style: none; padding: 0; margin-left: 60px }
+        #prodlist li{float: left; margin-right: 55px;}
+        #prodlist div { width: 100px; height: 100px; background: #dcdcdc; border-radius: 10px; }
+        #prodlist p {text-align: center;}
+
+        footer{clear: both; border-top:1px solid black;}
+        footer ul {list-style: none; padding: 0; margin-left: 60px; float: left; margin-right: 15px}
+
+    </style>
 </head>
 <body>
+<div class="container">
 <header>
-
-</header>
-<nav>
     <h1>logo</h1>
-
     <p><u>Login</u> or <u>Create Account</u></p>
     <ul>
         <li>contact |</li>
@@ -18,11 +49,16 @@
         <li>support |</li>
         <li>CART |</li>
     </ul>
+</header>
+<nav>
+    <input type="text">
+    <select><option>Category</option></select>
+    <button type="button">SEARCH</button>
 </nav>
 <div id="main">
     <section>
         <aside>
-            <ui>
+            <ul>
                 <li>All categories</li>
                 <li>Category1</li>
                 <li>Category2</li>
@@ -30,18 +66,17 @@
                 <li>Category4</li>
                 <li>Category5</li>
                 <li>Category6</li>
-            </ui>
+            </ul>
         </aside>
         <div id="banner">
             <H3>[PROMOTIONAL IMAGES ROTATE HERE]</H3>
-            <ui>
+            <ul>
                 <li>1</li>
                 <li>2</li>
                 <li>3</li>
                 <li>4</li>
-            </ui>
+            </ul>
         </div>
-        <div>PROMOTIONAL IMAGES ROTATE HERE</div>
     </section>
     <section>
         <div id="prodlist">
@@ -71,13 +106,16 @@
                     <div></div>
                     <p><a href="#">Product6</a></p>
                 </li>
+                <li>
+                    <div></div>
+                    <p><a href="#">Product7</a></p>
+                </li>
             </ul>
         </div>
     </section>
 </div>
 
 <footer>
-    <hr>
     <ul>
         <li><h3>ABOUT US</h3></li>
         <li>Company</li>
@@ -99,5 +137,6 @@
         <li>Site map</li>
     </ul>
 </footer>
+</div>
 </body>
 </html>
