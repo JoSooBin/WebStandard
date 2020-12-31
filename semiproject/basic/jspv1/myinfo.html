@@ -27,6 +27,11 @@
         a:hover{color: red; text-decoration: underline;}
 
     </style>
+    <style>
+        table {width: 25%; margin: 100px auto; table-layout: fixed; border-collapse: collapse;}
+        th, td {/*border: 1px solid black;*/ padding: 10px;}
+        th{text-align: right;}
+    </style>
 </head>
 <body>
 <div class="container">
@@ -48,8 +53,12 @@
         <h3>회원정보</h3>
         <br>
         <table>
+            <colgroup>
+                <col style="width: 35%">
+                <col>
+            </colgroup>
             <tbody>
-            <tr><td>아이디</td><td>SJB</td></tr>
+            <tr><td>아이디</td><td>JSB</td></tr>
             <tr><td>이름</td><td>조수빈</td></tr>
             <tr><td>이메일</td><td>000000@mail.com</td></tr>
             <tr><td>가입일</td><td>2020-12-23</td></tr>
