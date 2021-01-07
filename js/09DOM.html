@@ -165,28 +165,197 @@
     tr.appendChild(th4);
     tr.appendChild(th5);
 
-    //<생성한 제목행을 tbody에 자식요소로 추가
+    //생성한 제목행을 tbody에 자식요소로 추가
     tbody.appendChild(tr);
-    let txt6 = document.createTextNode('15');
-    let txt7 = document.createTextNode('시간은 금이야, 친구! 진짜라구, 친구! 정말이라구 친구! 사실이라구, 친구!');
-    let txt8 = document.createTextNode('JSB');
-    let txt9 = document.createTextNode('2020-12-23');
-    let txt10 = document.createTextNode('777');
 
-    //생성한 텍스트를 제목열에 자식요소로 추가
-    th1.appendChild(txt6);
-    th2.appendChild(txt7);
-    th3.appendChild(txt8);
-    th4.appendChild(txt9);
-    th5.appendChild(txt10);
-
-    //생성한 tbody을 테이블에 자식요소로 추가>
+    //생성한 tbody을 테이블에 자식요소로 추가
     table.appendChild(tbody);
-    tr.appendChild(th1);
-    tr.appendChild(th2);
-    tr.appendChild(th3);
-    tr.appendChild(th4);
-    tr.appendChild(th5);
+
+    //본문행 생성
+    tr = document.createElement('tr');
+    let td1 = document.createElement('td');
+    let td2 = document.createElement('td');
+    let td3 = document.createElement('td');
+    let td4 = document.createElement('td');
+    let td5 = document.createElement('td');
+
+    //본문행에 작성할 텍스트 생성
+     txt1 = document.createTextNode('1');
+     txt2 = document.createTextNode('시간은 금이야, 친구! 진짜라구, 친구! 정말이라구 친구!');
+     txt3 = document.createTextNode('JSB');
+     txt4 = document.createTextNode('2020-12-23');
+     txt5 = document.createTextNode('777');
+
+     //생성한 텍스트를 본문열에 자식요소로 추가
+    td1.appendChild(txt1);
+    td2.appendChild(txt2);
+    td3.appendChild(txt3);
+    td4.appendChild(txt4);
+    td5.appendChild(txt5);
+
+    //생성한 본문열들을 본문행에 자식요소로 추가
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+    tr.appendChild(td5);
+
+    //생성한 제목행을 tbody에 자식요소로 추가
+    tbody.appendChild(tr);
+
+</script>
+<h2>동적으로 테이블 생성하기3</h2>
+<table id="board2">
+</table>
+
+<script>
+     table = document.getElementById('board2');
+     tbody = document.createElement('tbody');
+
+    let thvalue = ['번호','제목','작성자','작성일','조회수'];
+    let tbvalue  = ['1','시간은 금이야, 친구! 진짜라구, 친구! 정말이라구 친구!','JSB','2020-12-23','777'];
+
+    tr = document.createElement('tr');
+    let th,td,txt = null;
+
+    //제목행 추가
+    for(let i = 0; i<5; ++i){
+        th = document.createElement('th');
+        txt = document.createTextNode(thvalue[i]);
+        th.appendChild(txt);
+        tr.appendChild(th)
+    }
+    tbody.appendChild(tr);
+
+    //본문행 추가
+    for(let j=1; j<=15; ++j) {
+        tr = document.createElement('tr');
+        for (let i = 0; i < 5; ++i) {
+            td = document.createElement('td');
+            txt = document.createTextNode(tbvalue[i]);
+            td.appendChild(txt);
+            tr.appendChild(td)
+        }
+        tbody.appendChild(tr);
+    }
+    //생성된 tbody를 table에 추가
+    table.appendChild(tbody);
+</script>
+
+<h2>주소검색</h2>
+<div>
+    <select id="sido">
+        <option>-시도-</option>
+        <option>-서울특별시-</option>
+        <option>-경기도-</option>
+        <option>-인천광역시-</option>
+        <option>-부산광역시-</option>
+    </select>
+
+    <select id="gugun">
+        <option>-시/군/구-</option>
+    </select>
+
+    <select id="dong">
+        <option>-읍/면/동-</option>
+    </select>
+</div>
+<p id = "addr"></p>
+<script>
+    //전국 시도중 하나를 선택하면
+    //선택한 시도에 대한 시군구가 다음 select에 목록으로 출력되고
+    //시군구 중 하나를 선택하면 선택한 시군구에 대한 읍면동이 다음select에 목록으로 출력되도록 함
+    //포인트 1 : 이벤트 발생시 option 태그가 동적으로 생성
+    //포인트 2 : select에서 발생가능한 이벤트는 change임
+    //포인트 3 : select에서 선택한 항목의 정보는 selectedINdex속성을 이용
+    //포인트 4 : option태그에 텍스트를 추가하려면 createTextNode를 이용
+
+    let sd = ['','서울특별시','경기도','인천광역시','부산광역시'];
+    let sgg = [['-시/군/구-'],
+        ['-시/군/구-','강남구','서초구','송파구'],
+        ['-시/군/구-','광명시','구리시','성남시','수원시','고양시'],
+        ['-시/군/구-','연수구','남동구','서구'],
+        ['-시/군/구-','진구','동래구','해운대구','기장군']];
+
+    let ymd = [[['-읍/면/동-']],
+            [['-읍/면/동-'],
+                [['-읍/면/동-'],'논현동','대치동','삼성동'],
+                [['-읍/면/동-'],'반포동','방배동','양재동'],
+                [['-읍/면/동-'],'가락동','석촌동','잠실동']],
+            [['-읍/면/동-'],
+                ['-읍/면/동-','1'],
+                ['-읍/면/동-','2'],
+                ['-읍/면/동-','3'],
+                ['-읍/면/동-','4'],
+                ['-읍/면/동-','5']],
+            [['-읍/면/동-'],['a'],['b'],['c']],
+            [['-읍/면/동-'],['가'],['나'],['다'],['라']] ];
+
+    //변수선언
+    let sido = document.getElementById('sido');
+    let gugun = document.getElementById('gugun');
+    let dong = document.getElementById('dong');
+
+    //첫번째 select요소에 이벤트 핸들러 등록
+    sido.addEventListener('change', makegu);
+
+    function makegu(){
+        //현재 선택한 시도의 index값을 알아냄
+        let sidx = sido.selectedIndex;
+
+        //이미 등록된 목록은 제거
+        while (gugun.lastChild){ //구군목록에 option태그가 있는가?
+            gugun.removeChild(gugun.lastChild);
+        }
+
+        //선택한 시도에 대한 구군목록을 배열에서 가져와서 구군select에 목록 option으로 추가 함
+        //<select><option>강남구</option></select>
+        for (let gg of sgg[sidx]){
+            let opt = document.createElement('option');
+            let txt = document.createTextNode(gg);
+            opt.appendChild(txt)
+            gugun.appendChild(opt);
+        }
+    }
+
+    //두번째 selext요소에 이벤트 핸들러 등록
+    //첫번째 항목에서 선택한 값과 두번째 항목에서 선택한 값을 이용해서 읍면동 출력
+    //포인트 0 : 핸드러명 - makedong
+    //변수명 of 배열명[시도][구군]
+    gugun.addEventListener('change',makedong);
+
+    function makedong(){
+        let sidx = sido.selectedIndex;
+        let gidx = gugun.selectedIndex;
+
+        while (dong.lastChild){
+            dong.removeChild(dong.lastChild);
+        }
+
+        for (let dg of ymd[sidx][gidx]) {
+            let opt = document.createElement('option');
+            let txt = document.createTextNode(dg);
+            opt.appendChild(txt);
+            dong.appendChild(opt)
+        }
+    }
+
+    //세번째 select 요소에 이벤트핸들러 등록
+    //선택한 주소(시도/구군/읍면동)를 p요소 이용해서 출력
+    dong.addEventListener('change',showaddr);
+    let addr = document.getElementById('addr');
+
+    function showaddr() {
+        let ymdong = ' ';
+        if(dong.value != '-읍/면/동-') ymdong = dong.value;
+        let result = sido.value + ' ' +gugun.value + ' ' + ymdong;
+        addr.innerHTML = '당신이 선택한 주소는 <b>' +result + '</b>입니다';
+    }
+</script>
+<script>
+    let msg = 'Hello, World!!';
+    alert('${msg}');
+    console.log(`${msg}`);
 </script>
 </body>
 </html>
