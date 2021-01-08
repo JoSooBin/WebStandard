@@ -174,10 +174,32 @@
     //FF : 당신은 FF를 사용중이군요
     //CR : 당신은 CR를 사용중이군요
     //EG : 당신은 EG를 사용중이군요
+    //브라우져별 코드네임 IE - tirdent
+    //브라우져별 코드네임 FF - Firefox
+    //브라우져별 코드네임 CR - Chrome
+    //브라우져별 코드네임 EG - Edge
 
-    let appver = navigator.appVersion;
+     ua = navigator.userAgent;
+    // let msg = ['당신은 IE를 사용중이군요, Edg로 얼른 바꾸세요','당신은 EG를 사용중이군요'
+    //     ,'당신은 FF를 사용중이군요', '당신은 CR를 사용중이군요'];
+    let codenames = ['Trident','Edg','Firefox','Chrome'];
+    let result = '당신은 비주류 브라우저를 사용하시는군요!';
 
-    document.write(appver + '<p>');
+    //if (ua.indexOf(크롬)) 처리1
+    //else if (ua.indexOf(파폭)) 처리2
+    //else if (ua.indexOf(엣지)) 처리3
+    //else if (ua.indexOf(그외)) 처리4
+    /*for (let i = 0; i<msg.length; ++i){
+        if(ua.indexOf(codenames[i]) >= 0) {
+            result = msg[i];
+            result = `당신은 ${codenames[i]}을 사용중이군요`
+            break;
+        }
+    }*/
+    if(ua.indexOf('Trident') >=0 ){
+        result = '당신은 ---를 사용중이군요';
+    }
+    document.write('<p>'+result+'</p>');
 </script>
 </body>
 </html>
