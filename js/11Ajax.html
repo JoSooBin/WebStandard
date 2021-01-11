@@ -106,7 +106,9 @@
     //첫번째 select요소에 이벤트 핸들러 등록
     sido.addEventListener('change', getgugun);
 
-    //선택한 시도로 구군을 검색해서 비동기로 처리함함
+    //선택한 시도로 구군을 검색해서 비동기로 처리함
+    //localhost:8080/dong.jsp?sido=서울
+    // 서버에 요청하고 넘어온 결과를 makedong함수로 전달
    function getgugun(){
         req = new XMLHttpRequest();
         req.onreadystatechange = function (){
@@ -121,6 +123,10 @@
 
     function makegu(gg) {
         let cols = gg.split(',');
+
+        //기존 내용 모두 지우기
+        while(gugun.firstChild)
+            gugun.removeChild(gugun.firstChild);
 
         opt = document.createElement('option');
         txt = document.createTextNode('--시/군/구--');
@@ -137,6 +143,43 @@
         }
     }
 
+    gugun.addEventListener('change',getdong);
+
+    //선택한 시도와 구군을 검색해서 비동기로 처리함
+   //localhost:8080/dong.jsp?sido=서울&gugun='강남구'
+    // 서버에 요청하고 넘어온 결과를 makedong함수로 전달
+   function getdong(){
+       req = new XMLHttpRequest();
+       req.onreadystatechange = function (){
+           if(req.readyState == 4 && req.status ==200)
+               makedong(req.responseText);
+       }
+       let qry = '?sido=' +sido.value+'&gugun='+gugun.value;
+       req.open ('get',url3+qry,true);
+       req.send();
+   }
+
+   function makedong(dg){
+       let cols = dg.split(',');
+
+       //기존 내용 모두 지우기
+       while(dong.firstChild)
+           dong.removeChild(dong.firstChild);
+
+       opt = document.createElement('option');
+       txt = document.createTextNode('--읍/면/동--');
+       opt.appendChild(txt);
+       dong.appendChild(opt);
+
+       for(let col of cols){
+           if (col == '') continue;
+           opt = document.createElement('option');
+           opt.value = col.trim();
+           txt = document.createTextNode(col.trim());
+           opt.appendChild(txt);
+           gugun.appendChild(opt);
+       }
+   }
 </script>
 </body>
 </html>
